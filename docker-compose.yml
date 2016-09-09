@@ -1,0 +1,26 @@
+PostgreSQL:
+  restart: always
+  image: protax/odoopostgresql:1.0
+  container_name: dbodoo
+  ports:
+    - "5435:5432"
+  environment:
+    - DEBUG=false
+
+    - PG_PASSWORD=passw0rd
+
+    - DB_USER=
+    - DB_PASS=
+    - DB_NAME=
+    - DB_TEMPLATE=
+
+    - DB_EXTENSION=
+
+    - REPLICATION_MODE=
+    - REPLICATION_USER=
+    - REPLICATION_PASS=
+    - REPLICATION_SSLMODE=
+  volumes:
+    - ./data:/var/lib/postgresql
+    - ./log:/var/log/postgresql
+    - ./run:/run/postgresql
